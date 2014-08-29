@@ -14,7 +14,6 @@ int menu_select;
 int save_select = 0;
 int death_number;
 int avoid_number = 0;
-int last_avoid;
 int success = 0; // Now with more stat tracking!
 int config_sub_menu;
 string trap_text; //For readability (becuase it would've annoyed me)
@@ -36,7 +35,7 @@ void title_menu() {
 	}
 	cout << "[6] Exit\n";
 	
-	if (!(cin >> save_select)) {
+	if (!(cin >> save_select)) { // Any instances of this will check that the input is actually an integer.
 		cout << "Invalid value.\n\n";
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -166,10 +165,6 @@ int main() {
 			case 4:
 				game_over = 0;
 				break;
-				/* default:
-					cout << "\nInvalid selection.\n\n";
-					title_menu();
-					break; */
 			}
 		}
 	cout << "\nInvalid selection.\n\n";
