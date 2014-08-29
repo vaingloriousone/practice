@@ -126,7 +126,7 @@ int main() {
 						cin.ignore(numeric_limits<streamsize>::max(), '\n');
 						cin >> avoid_number;
 					}
-					while (avoid_number > 100 || avoid_number == 0) {
+					while (avoid_number >= 100 || avoid_number == 0) {
 						cout << "Invalid value. \n";
 						cout << "Please enter a number (1-100) to avoid death.\n";
 						cin.clear();
